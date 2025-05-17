@@ -1,0 +1,465 @@
+/* Success Stories Page Styles */
+.success-hero {
+    background: linear-gradient(135deg, #0a192f, #001d3d);
+    color: white;
+    padding: 100px 0 60px;
+    text-align: center;
+    position: relative;
+}
+
+.success-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.success-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.breadcrumb {
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.breadcrumb a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stat-card {
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 8px;
+    padding: 30px 20px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00d4ff;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Featured Stories */
+.featured-stories {
+    padding: 80px 0;
+}
+
+.featured-stories h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.story-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.story-filter button {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid #00d4ff;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.story-filter button.active,
+.story-filter button:hover {
+    background: #00d4ff;
+    color: #000;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.story-card {
+    background: #1a1f2e;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.story-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+}
+
+.story-image {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.story-card:hover .story-image img {
+    transform: scale(1.05);
+}
+
+.story-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #00d4ff;
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.story-content {
+    padding: 20px;
+}
+
+.story-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.story-meta {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.student-name {
+    font-weight: 600;
+    color: #00d4ff;
+}
+
+.student-course {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.story-excerpt {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.story-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.achievement-tag {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.achievement-tag i {
+    color: #fbbf24;
+}
+
+.btn-read {
+    background: #00d4ff;
+    color: #000;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-read:hover {
+    background: #00b8d4;
+}
+
+/* Video Testimonials */
+.video-testimonials {
+    padding: 60px 0;
+    background: #0d1117;
+}
+
+.video-testimonials h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.video-card {
+    background: #1a1f2e;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-card h3 {
+    padding: 15px 20px 5px;
+    font-size: 1.1rem;
+}
+
+.video-card p {
+    padding: 0 20px 15px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+}
+
+/* Achievement Showcase */
+.achievement-showcase {
+    padding: 80px 0;
+}
+
+.achievement-showcase h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.achievement-card {
+    background: #1a1f2e;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+}
+
+.achievement-icon {
+    font-size: 2.5rem;
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.achievement-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.achievement-card p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+}
+
+/* Alumni CTA */
+.alumni-cta {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 80px 0;
+    color: white;
+    text-align: center;
+}
+
+.alumni-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.alumni-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Success Form */
+.success-form {
+    padding: 80px 0;
+    background: #0d1117;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #1a1f2e;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.form-content {
+    padding: 40px;
+}
+
+.form-content h2 {
+    margin-bottom: 15px;
+}
+
+.form-content p {
+    margin-bottom: 25px;
+    color: rgba(255,255,255,0.8);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    background: #00d4ff;
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background: #00b8d4;
+}
+
+.form-image {
+    height: 100%;
+}
+
+.form-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .form-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-image {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .success-hero {
+        padding: 80px 0 40px;
+    }
+    
+    .success-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        max-width: 300px;
+    }
+    
+    .stories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .story-filter button {
+        padding: 6px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .form-content {
+        padding: 30px 20px;
+    }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
