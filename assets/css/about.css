@@ -1,0 +1,447 @@
+/* About Page Styles */
+.about-hero {
+    background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('/assets/img/about-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.about-hero .subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.breadcrumb {
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.breadcrumb a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+/* Our Story Section */
+.our-story {
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    color: #00d4ff;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.7);
+}
+
+.story-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.story-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    height: 100%;
+    width: 2px;
+    background: rgba(0, 212, 255, 0.3);
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-year {
+    width: 100px;
+    text-align: right;
+    padding-right: 30px;
+    font-weight: 700;
+    color: #00d4ff;
+    font-size: 1.1rem;
+}
+
+.timeline-content {
+    flex: 1;
+    padding-left: 30px;
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #00d4ff;
+    border: 4px solid #0a192f;
+}
+
+.timeline-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+}
+
+.timeline-item.future .timeline-content::before {
+    background: #f472b6;
+}
+
+/* Mission & Vision */
+.mission-vision {
+    padding: 60px 0;
+    background: #0d1117;
+}
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.mv-card {
+    background: #1a1f2e;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.mv-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+}
+
+.mv-icon {
+    font-size: 2.5rem;
+    color: #00d4ff;
+    margin-bottom: 20px;
+}
+
+.mv-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.mv-card p {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+}
+
+.mv-card.vision .mv-icon {
+    color: #f472b6;
+}
+
+/* Our Team */
+.our-team {
+    padding: 80px 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.team-member {
+    background: #1a1f2e;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+}
+
+.member-image {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.05);
+}
+
+.social-links {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+}
+
+.team-member:hover .social-links {
+    bottom: 0;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #00d4ff;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #fff;
+    transform: translateY(-3px);
+}
+
+.member-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.member-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.member-info span {
+    display: block;
+    color: #00d4ff;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.member-info p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+}
+
+.cta-team {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta-team p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* Why Choose Us */
+.why-choose-us {
+    padding: 80px 0;
+    background: #0d1117;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #1a1f2e;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: #00d4ff;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+}
+
+/* Future Goals */
+.future-goals {
+    padding: 80px 0;
+}
+
+.goals-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.goal-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 30px;
+    padding: 30px;
+    background: #1a1f2e;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.goal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+}
+
+.goal-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00d4ff;
+    line-height: 1;
+}
+
+.goal-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.goal-content p {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+}
+
+/* About CTA */
+.about-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0a192f, #001d3d);
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .story-timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-year {
+        width: 60px;
+        padding-right: 15px;
+        font-size: 1rem;
+    }
+    
+    .timeline-content {
+        padding-left: 20px;
+    }
+    
+    .timeline-content::before {
+        left: -6px;
+        top: 5px;
+        width: 12px;
+        height: 12px;
+        border-width: 2px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .cta-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-item {
+        flex-direction: column;
+    }
+    
+    .timeline-year {
+        text-align: left;
+        margin-bottom: 10px;
+        padding-right: 0;
+    }
+    
+    .goal-card {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
