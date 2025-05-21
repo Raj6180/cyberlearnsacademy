@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Cyber Learns Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0f0;
+            --secondary-color: #00ff88;
+            --dark-bg: #0a0a0a;
+            --section-bg: #111;
+            --card-bg: #1a1a1a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--dark-bg);
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+        
+        /* হেডার স্টাইল */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--menu-bg);
+            border-bottom: 1px solid var(--primary-color);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* লোগো স্টাইল */
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 40px;
+            margin-right: 15px;
+            filter: drop-shadow(0 0 5px var(--primary-color));
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+        
+        /* নেভিগেশন মেনু */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        .nav-menu li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        .nav-menu li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-menu li a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-menu li a:hover {
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+        
+        /* মোবাইল মেনু বাটন */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        /* Main Content */
+        .main {
+            margin-top: 80px;
+        }
+        
+        /* Hero Section */
+        .services-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .services-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--primary-color);
+            animation: glitch 1s linear infinite;
+        }
+        
+        .services-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { text-shadow: 0.05em 0 0 #00fffc, -0.05em -0.025em 0 #fc00ff; }
+            15% { text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.025em 0 #fc00ff; }
+            50% { text-shadow: 0.025em 0.05em 0 #00fffc, 0.05em 0 0 #fc00ff; }
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background-color: var(--dark-bg);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 255, 0, 0.1);
+            border-color: var(--primary-color);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .service-features {
+            margin-top: 20px;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .service-features li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+        
+        /* Web Development Section */
+        .web-dev-section {
+            padding: 80px 0;
+            background-color: var(--section-bg);
+            border-top: 1px solid rgba(0, 255, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+        }
+        
+        .web-dev-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .web-dev-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.1);
+        }
+        
+        .web-dev-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .web-dev-content {
+            flex: 1;
+        }
+        
+        .web-dev-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .web-dev-content p {
+            margin-bottom: 20px;
+        }
+        
+        .tech-stack {
+            margin-top: 30px;
+        }
+        
+        .tech-stack h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .tech-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .tech-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        /* Testing Section */
+        .testing-section {
+            padding: 80px 0;
+            background-color: var(--dark-bg);
+        }
+        
+        .testing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .testing-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .method-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .method-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        /* Data Recovery Section */
+        .data-recovery-section {
+            padding: 80px 0;
+            background-color: var(--section-bg);
+            border-top: 1px solid rgba(0, 255, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+        }
+        
+        .recovery-steps {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        /* Ethical Hacking Section */
+        .hacking-section {
+            padding: 80px 0;
+            background-color: var(--dark-bg);
+        }
+        
+        .hacking-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .hacking-service {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+        
+        .hacking-service:hover {
+            border-color: red;
+            transform: translateY(-5px);
+        }
+        
+        .hacking-service h3 {
+            color: #ff5555;
+            margin-bottom: 15px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(0, 100, 0, 0.8), rgba(0, 50, 0, 0.9));
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .cta-btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #080808;
+            padding: 80px 0 30px;
+            border-top: 1px solid rgba(0, 255, 0, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-about {
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+            margin-right: 15px;
+        }
+        
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 255, 0, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .web-dev-container {
+                flex-direction: column;
+            }
+            
+            .services-hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .web-dev-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .services-hero {
+                padding: 80px 0;
+            }
+            
+            .services-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .services-hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="/images/logo.png" alt="Cyber Learns Academy Logo" class="logo-img">
+                
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#courses">Courses</a></li>
+                
+                
+                
+                <li><a href="https://rtchat.pythonanywhere.com/">Admission</a></li>
+                
+                <li><a href="https://rtchat.pythonanywhere.com/" class="hacker-btn" style="padding: 8px 20px;">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Services Hero Section -->
+        <section class="services-hero">
+            <div class="container">
+                <h1>Our Professional Services</h1>
+                <p>Comprehensive cybersecurity solutions tailored to protect your digital assets and enhance your online presence</p>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section class="services-section">
+            <div class="section-title">
+                <h2>Our Core Services</h2>
+                <p>We offer a complete range of cybersecurity and development services to meet your business needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Web Development Service -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Web Development">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="service-title">Web Development</h3>
+                        <p>Secure, high-performance websites and web applications built with the latest technologies.</p>
+                        
+                        <ul class="service-features">
+                            <li>Custom website development</li>
+                            <li>E-commerce solutions</li>
+                            <li>Web application security</li>
+                            <li>Responsive design</li>
+                            <li>SEO optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Testing Service -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Security Testing">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="service-title">Security Testing</h3>
+                        <p>Comprehensive testing services to identify vulnerabilities in your systems.</p>
+                        
+                        <ul class="service-features">
+                            <li>Penetration testing</li>
+                            <li>Vulnerability assessment</li>
+                            <li>Code review</li>
+                            <li>Security audits</li>
+                            <li>Compliance testing</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Data Recovery Service -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Data Recovery">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="service-title">Data Recovery</h3>
+                        <p>Professional data recovery services for all types of storage devices.</p>
+                        
+                        <ul class="service-features">
+                            <li>Hard drive recovery</li>
+                            <li>RAID reconstruction</li>
+                            <li>Forensic data recovery</li>
+                            <li>Encrypted data recovery</li>
+                            <li>Emergency recovery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Web Development Section -->
+        <section class="web-dev-section">
+            <div class="web-dev-container">
+                <div class="web-dev-image">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Web Development">
+                </div>
+                <div class="web-dev-content">
+                    <h2>Secure Web Development</h2>
+                    <p>We build websites and web applications with security as a top priority. Our development process includes security best practices at every stage to ensure your digital presence is protected from threats.</p>
+                    <p>From small business websites to complex web applications, we deliver solutions that are not only visually appealing but also secure, scalable, and optimized for performance.</p>
+                    
+                    <div class="tech-stack">
+                        <h3>Our Technology Stack</h3>
+                        <div class="tech-icons">
+                            <i class="fab fa-html5 tech-icon" title="HTML5"></i>
+                            <i class="fab fa-css3-alt tech-icon" title="CSS3"></i>
+                            <i class="fab fa-js tech-icon" title="JavaScript"></i>
+                            <i class="fab fa-react tech-icon" title="React"></i>
+                            <i class="fab fa-node-js tech-icon" title="Node.js"></i>
+                            <i class="fab fa-python tech-icon" title="Python"></i>
+                            <i class="fas fa-database tech-icon" title="Database"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testing Section -->
+        <section class="testing-section">
+            <div class="testing-container">
+                <div class="section-title">
+                    <h2>Comprehensive Security Testing</h2>
+                    <p>Identify vulnerabilities before attackers do with our thorough security testing services</p>
+                </div>
+                
+                <div class="testing-methods">
+                    <div class="method-card">
+                        <h3>Penetration Testing</h3>
+                        <p>Simulated cyber attacks to identify exploitable vulnerabilities in your systems.</p>
+                    </div>
+                    
+                    <div class="method-card">
+                        <h3>Vulnerability Assessment</h3>
+                        <p>Systematic review of security weaknesses in your IT infrastructure.</p>
+                    </div>
+                    
+                    <div class="method-card">
+                        <h3>Web Application Testing</h3>
+                        <p>Specialized testing for web apps to prevent common exploits like SQL injection and XSS.</p>
+                    </div>
+                    
+                    <div class="method-card">
+                        <h3>Network Security Testing</h3>
+                        <p>Evaluation of your network infrastructure for potential security gaps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Recovery Section -->
+        <section class="data-recovery-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Professional Data Recovery</h2>
+                    <p>When disaster strikes, our experts can recover your valuable data from any storage device</p>
+                </div>
+                
+                <div class="recovery-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Evaluation</h3>
+                            <p>We assess the damage and provide a detailed recovery plan with no obligation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Data Extraction</h3>
+                            <p>Using specialized tools, we extract data from damaged or corrupted storage media.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Data Reconstruction</h3>
+                            <p>We reconstruct damaged file structures and repair corrupted files.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Verification & Delivery</h3>
+                            <p>You verify the recovered data before we deliver it on your preferred media.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ethical Hacking Section -->
+        <section class="hacking-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Ethical Hacking Services</h2>
+                    <p>Think like an attacker to defend like a pro - our ethical hacking services help you stay one step ahead</p>
+                </div>
+                
+                <div class="hacking-services">
+                    <div class="hacking-service">
+                        <h3>Red Team Exercises</h3>
+                        <p>Full-scale simulated attacks to test your organization's detection and response capabilities.</p>
+                    </div>
+                    
+                    <div class="hacking-service">
+                        <h3>Social Engineering Tests</h3>
+                        <p>Evaluate your employees' security awareness through controlled phishing and other social engineering techniques.</p>
+                    </div>
+                    
+                    <div class="hacking-service">
+                        <h3>Wireless Security Testing</h3>
+                        <p>Identify vulnerabilities in your wireless networks and BYOD policies.</p>
+                    </div>
+                    
+                    <div class="hacking-service">
+                        <h3>Physical Security Testing</h3>
+                        <p>Test the effectiveness of your physical security controls against unauthorized access.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Secure Your Digital Assets?</h2>
+                <p>Contact us today to discuss how we can help protect your business from cyber threats</p>
+                <a href="https://wa.me/+918942045558" class="cta-btn">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <img src="/images/logo.png" alt="Cyber Learns Academy Logo">
+                    <span class="footer-logo-text">Cyber Learns</span>
+                </div>
+                <p>Providing cutting-edge cybersecurity solutions and education since 2025.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-heading">Services</h3>
+                <ul>
+                    <li><a href="https://rtchat.pythonanywhere.com/">Web Development</a></li>
+                    <li><a href="https://rtchat.pythonanywhere.com/">Security Testing</a></li>
+                    <li><a href="https://rtchat.pythonanywhere.com/">Data Recovery</a></li>
+                    <li><a href="https://rtchat.pythonanywhere.com/">Ethical Hacking</a></li>
+                    <li><a href="https://rtchat.pythonanywhere.com/">Consulting</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-heading">Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3 class="footer-heading">Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> West Bengla, Dakshin Dinajpur, Gangrampur, Fulbari</p>
+                <p><i class="fas fa-phone"></i> +91 8942045558</p>
+                <p><i class="fas fa-envelope"></i> info@cyberlearnsacademy.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Fri: 9am-6pm</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Cyber Learns Academy. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        // মোবাইল মেনু টগল ফাংশন
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
