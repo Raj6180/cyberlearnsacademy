@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Learns Academy - Building Future Hackers & Toppers</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .flip-card {
+            perspective: 1000px;
+        }
+        
+        .flip-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+        }
+        
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        
+        .typing-text::after {
+            content: "|";
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid white;
+        }
+        
+        .dark-mode {
+            background-color: #1a202c;
+            color: #f7fafc;
+        }
+        
+        .dark-mode .dark\:bg-gray-800 {
+            background-color: #2d3748;
+        }
+        
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+        
+        /* Hamburger Icon */
+        .hamburger {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            transition: all 0.25s;
+            position: relative;
+        }
+        
+        .hamburger-top,
+        .hamburger-middle,
+        .hamburger-bottom {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 2px;
+            background: #4f46e5;
+            transform: rotate(0);
+            transition: all 0.5s;
+        }
+        
+        .hamburger-middle {
+            transform: translateY(7px);
+        }
+        
+        .hamburger-bottom {
+            transform: translateY(14px);
+        }
+        
+        .open .hamburger-top {
+            transform: rotate(45deg) translateY(6px) translate(6px);
+        }
+        
+        .open .hamburger-middle {
+            display: none;
+        }
+        
+        .open .hamburger-bottom {
+            transform: rotate(-45deg) translateY(6px) translate(-6px);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text {
+                order: 2;
+                text-align: center;
+                margin-top: 2rem;
+            }
+            
+            .hero-image {
+                order: 1;
+            }
+            
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .admission-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item::before {
+                left: -28px;
+            }
+            
+            .faculty-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="h-8 w-auto" src="/images/logob.png" alt="Cyber Learns Academy">
+                        <span class="ml-2 text-xl font-bold text-gray-900 hidden sm:block">Cyber Learns Academy</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#home" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                    <a href="#about" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About</a>
+                    <a href="#courses" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Courses</a>
+                    <a href="https://wa.me/918942045558?text=হ্যালো%2C%20আমি%20আপনার%20সার্ভিস%20নিয়ে%20আগ্রহী।%20Hi%20sir%2C%20I%20need%20admission.
+" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Admissions</a>
+                    <a href="https://wa.me/918942045558?text=Hi%2C%20I%20am%20interested%20in%20your%20service.
+" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Contact</a>
+                </div>
+                
+                <div class="flex items-center">
+                    <button id="theme-toggle" class="p-2 rounded-full focus:outline-none hidden md:block">
+                        <i class="fas fa-moon text-gray-600"></i>
+                    </button>
+                    <a href="https://rtchat.pythonanywhere.com" class="ml-4 hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Login</a>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-button" class="p-2 rounded-md text-gray-700 hover:text-gray-900 focus:outline-none">
+                            <div class="hamburger" id="hamburger">
+                                <span class="hamburger-top"></span>
+                                <span class="hamburger-middle"></span>
+                                <span class="hamburger-bottom"></span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="mobile-menu md:hidden bg-white" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
+                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About</a>
+                    <a href="#courses" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Courses</a>
+                    <a href="https://wa.me/918942045558?text=হ্যালো%2C%20আমি%20আপনার%20সার্ভিস%20নিয়ে%20আগ্রহী।%20Hi%20sir%2C%20I%20need%20admission.
+" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Admissions</a>
+                    <a href="https://wa.me/918942045558?text=Hi%2C%20I%20am%20interested%20in%20your%20service.
+" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact</a>
+                    <div class="pt-4 pb-3 border-t border-gray-200">
+                        <div class="flex items-center px-5">
+                            <button id="mobile-theme-toggle" class="p-2 rounded-full focus:outline-none">
+                                <i class="fas fa-moon text-gray-600"></i>
+                            </button>
+                            <a href="https://rtchat.pythonanywhere.com" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-12 md:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between hero-content">
+                <div class="md:w-1/2 hero-text">
+                    <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4 text-center md:text-left">
+                        Building Future <span class="typing-text" data-words='["Hackers", "Toppers", "Leaders", "Innovators"]'></span>
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 text-center md:text-left">Join West Bengla's premier tech & academic learning platform with industry-leading courses and expert instructors.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="https://wa.me/918942045558?text=হ্যালো%2C%20আমি%20আপনার%20সার্ভিস%20নিয়ে%20আগ্রহী।%20Hi%20sir%2C%20I%20need%20admission." class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold text-center">Apply Now</a>
+                        <a href="#courses" class="bg-transparent border-2 border-white hover:bg-white hover:text-indigo-600 px-6 py-3 rounded-lg font-semibold text-center">Explore Courses</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0 hero-image">
+                    <img src="/images/rr.jpg" alt="Students Learning" class="rounded-lg shadow-2xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
+                <div class="p-4 md:p-6">
+                    <div class="text-3xl md:text-4xl font-bold text-indigo-600 mb-2 counter" data-target="0001">0</div>
+                    <div class="text-sm md:text-base text-gray-600">Students Enrolled</div>
+                </div>
+                <div class="p-4 md:p-6">
+                    <div class="text-3xl md:text-4xl font-bold text-indigo-600 mb-2 counter" data-target="5">0</div>
+                    <div class="text-sm md:text-base text-gray-600">Courses Offered</div>
+                </div>
+                <div class="p-4 md:p-6">
+                    <div class="text-3xl md:text-4xl font-bold text-indigo-600 mb-2 counter" data-target="98">0</div>
+                    <div class="text-sm md:text-base text-gray-600">Success Rate</div>
+                </div>
+                <div class="p-4 md:p-6">
+                    <div class="text-3xl md:text-4xl font-bold text-indigo-600 mb-2 counter" data-target="3">0</div>
+                    <div class="text-sm md:text-base text-gray-600">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">About Cyber Learns Academy</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mt-4"></div>
+            </div>
+            
+            <div class="md:flex md:items-center md:space-x-8">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="/images/logom.jpeg" alt="About Cyber Learns Academy" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Our Story</h3>
+                    <p class="text-gray-600 mb-6">Founded in 2024, Cyber Learns Academy has been at the forefront of technology education in Dakshin Dinajpur. We started with a small team of passionate educators and have grown into a premier institution with thousands of successful alumni.</p>
+                    
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-indigo-100 rounded-md p-2">
+                                <i class="fas fa-bullseye text-indigo-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-base md:text-lg font-medium text-gray-900">Our Mission</h4>
+                                <p class="text-gray-600 mt-1">To empower students with cutting-edge skills and knowledge that prepare them for the challenges of tomorrow's digital world.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-indigo-100 rounded-md p-2">
+                                <i class="fas fa-eye text-indigo-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-base md:text-lg font-medium text-gray-900">Our Vision</h4>
+                                <p class="text-gray-600 mt-1">To become the leading tech education hub in South Asia, recognized for innovation, excellence, and student success.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Faculty Section -->
+            <div class="mt-12 md:mt-16">
+                <h3 class="text-xl md:text-2xl font-semibold text-center text-gray-800 mb-8">Meet Our Faculty</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 faculty-grid">
+                    <!-- Faculty Card 1 -->
+                    <div class="flip-card h-80 md:h-96">
+                        <div class="flip-card-inner h-full">
+                            <div class="flip-card-front bg-white rounded-lg shadow-lg p-4 md:p-6 flex flex-col items-center justify-center h-full">
+                                <img src="/images/logom.jpeg" alt="Faculty Member" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4">
+                                <h4 class="text-lg md:text-xl font-bold text-gray-900">Mr. Rajjak Sarkar</h4>
+                                <p class="text-indigo-600 text-sm md:text-base">Head of Cybersecurity</p>
+                                <div class="mt-4 flex space-x-4">
+                                    <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                            <div class="flip-card-back bg-indigo-600 text-white rounded-lg shadow-lg p-4 md:p-6 flex flex-col items-center justify-center h-full">
+                                <h4 class="text-lg md:text-xl font-bold mb-2">Mr. Rajjak Sarkar</h4>
+                                <p class="text-center mb-4 text-sm md:text-base">real-world experience in Cybersecurity from MIT with 5+ years of industry experience.</p>
+                                <p class="text-center text-sm md:text-base">Specializes in ethical hacking, network security, and digital forensics.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Faculty Card 2 -->
+                    <!-- <div class="flip-card h-80 md:h-96">
+                        <div class="flip-card-inner h-full">
+                            <div class="flip-card-front bg-white rounded-lg shadow-lg p-4 md:p-6 flex flex-col items-center justify-center h-full">
+                                <img src="https://via.placeholder.com/150?text=Faculty" alt="Faculty Member" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4">
+                                <h4 class="text-lg md:text-xl font-bold text-gray-900">Nusrat Jahan</h4>
+                                <p class="text-indigo-600 text-sm md:text-base">Lead AI Instructor</p>
+                                <div class="mt-4 flex space-x-4">
+                                    <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                            <div class="flip-card-back bg-indigo-600 text-white rounded-lg shadow-lg p-4 md:p-6 flex flex-col items-center justify-center h-full">
+                                <h4 class="text-lg md:text-xl font-bold mb-2">Nusrat Jahan</h4>
+                                <p class="text-center mb-4 text-sm md:text-base">Former AI researcher at Google with expertise in machine learning and neural networks.</p>
+                                <p class="text-center text-sm md:text-base">Passionate about making AI accessible to students in Bangladesh.</p>
+                            </div>
+                        </div>
+                    </div>  -->
+                    
+                    <!-- Faculty Card 3 -->
+                   <!--  <div class="flip-card h-80 md:h-96">
+                        <div class="flip-card-inner h-full">
+                            <div class="flip-card-front bg-white rounded-lg shadow-lg p-4 md:p-6 flex flex-col items-center justify-center h-full">
+                                <img src="https://via.placeholder.com/150?text=Faculty" alt="Faculty Member" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4">
+                                <h4 class="text-lg md:text-xl font-bold text-gray-900">Rahim Khan</h4>
+                                <p class="text-indigo-600 text-sm md:text-base">Programming Expert</p>
+                                <div class="mt-4 flex space-x-4">
+                                    <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="text-gray-500 hover:text-indigo-600"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                            <div class="flip-card-back bg-indigo-600 text-white rounded-lg shadow-lg p-4 md:p-6 flex flex-col items-center justify-center h-full">
+                                <h4 class="text-lg md:text-xl font-bold mb-2">Rahim Khan</h4>
+                                <p class="text-center mb-4 text-sm md:text-base">Full-stack developer with 10+ years experience building scalable web applications.</p>
+                                <p class="text-center text-sm md:text-base">Specializes in JavaScript, Python, and cloud technologies.</p>
+                            </div>
+                        </div>
+                    </div>
+                -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-12 md:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Our Courses</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mt-4"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Choose from our wide range of courses designed to meet industry demands and help you achieve your career goals.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8 course-grid">
+                <!-- Course Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                    <div class="bg-indigo-600 p-4 text-white">
+                        <h3 class="text-lg md:text-xl font-bold">Cybersecurity Professional</h3>
+                        <p class="text-indigo-100 text-sm">6 Months Intensive Program</p>
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-clock text-indigo-600 mr-2 text-sm"></i>
+                            <span class="text-sm md:text-base">Duration: 6 Months</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-money-bill-wave text-indigo-600 mr-2 text-sm"></i>
+                            <span class="text-sm md:text-base">Fee:7,000</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-user-graduate text-indigo-600 mr-2 text-sm"></i>
+                            <span class="text-sm md:text-base">Prerequisite: Basic Networking</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">Master ethical hacking, penetration testing, and security protocols with hands-on training from industry experts.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-sm md:text-base">What You'll Learn:</h4>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1 text-sm">
+                                <li>Network Security Fundamentals</li>
+                                <li>Ethical Hacking Techniques</li>
+                                <li>Cryptography & Encryption</li>
+                                <li>Incident Response</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/918942045558?text=Hi%20Sir%2C%20I%20need%20admission%20in%20Cybersecurity%20course.
+" class="block w-full bg-indigo-600 hover:bg-indigo-700 text-white text-center py-2 rounded-lg font-medium transition duration-300 text-sm md:text-base">Enroll Now</a>
+                    </div>
+                </div>
+                
+                <!-- Course Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                    <div class="bg-green-600 p-4 text-white">
+                        <h3 class="text-lg md:text-xl font-bold">APP & Game Development</h3>
+                        <p class="text-green-100 text-sm">6 Months Comprehensive Course</p>
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-clock text-green-600 mr-2 text-sm"></i>
+                            <span class="text-sm md:text-base">Duration: 6 Months</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-money-bill-wave text-green-600 mr-2 text-sm"></i>
+                            <span class="text-sm md:text-base">Fee: 7,000</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-user-graduate text-green-600 mr-2 text-sm"></i>
+                            <span class="text-sm md:text-base">Prerequisite: Python, java Basics</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">Explore mobile and game development with hands-on projects,high-performance applications and interactive games.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-sm md:text-base">What You'll Learn:</h4>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1 text-sm">
+                                <li>App & game development basics</li>
+                                <li>Building interactive apps</li>
+                                <li>Using latest tools</li>
+                                <li>Hands-on projects</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/918942045558?text=Hi%20Sir%2C%20I%20need%20admission%20in%20AppDevelopment%20course." class="block w-full bg-green-600 hover:bg-green-700 text-white text-center py-2 rounded-lg font-medium transition duration-300 text-sm md:text-base">Enroll Now</a>
+                    </div>
+                </div>
+                
+                <!-- Course Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                    <div class="bg-purple-600 p-4 text-white">
+                        <h3 class="text-lg md:text-xl font-bold">Full Stack Web Development</h3>
+                        <p class="text-purple-100 text-sm">5 Months Bootcamp</p>
+                    </div>
+                    <div class="p-4 md:p-6">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-clock text-purple-600 mr-2 text-sm"></i>
+                            <span class="text-sm md:text-base">Duration: 5 Months</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-money-bill-wave text-purple-600 mr-2 text-sm"></i>
+                            <span class="text-sm md:text-base">Fee: 6,000</span>
+                        </div>
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-user-graduate text-purple-600 mr-2 text-sm"></i>
+                            <span class="text-sm md:text-base">Prerequisite: Basic Programming</span>
+                        </div>
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">Become a proficient full-stack developer mastering both frontend and backend technologies with modern frameworks.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2 text-sm md:text-base">What You'll Learn:</h4>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1 text-sm">
+                                <li>HTML, CSS, JavaScript</li>
+                                <li>React.js & Node.js</li>
+                                <li>Database Management</li>
+                                <li>API Development</li>
+                            </ul>
+                        </div>
+                        <a href="https://wa.me/918942045558?text=Hi%20Sir%2C%20I%20need%20admission%20in%20WebDevelopment%20course." class="block w-full bg-purple-600 hover:bg-purple-700 text-white text-center py-2 rounded-lg font-medium transition duration-300 text-sm md:text-base">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8 md:mt-12">
+                <a href="#" class="inline-flex items-center px-4 md:px-6 py-2 md:py-3 border border-transparent text-sm md:text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+                    View All Courses
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section id="admissions" class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Admission Process</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mt-4"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Join Cyber Learns Academy through our simple and transparent admission process.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 admission-grid">
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-6">How to Apply</h3>
+                    
+                    <div class="space-y-6 relative">
+                        <!-- Timeline item 1 -->
+                        <div class="relative pl-12 timeline-item">
+                            <div class="absolute left-0 top-0 h-full w-0.5 bg-indigo-200 ml-2.5"></div>
+                            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md">
+                                <div class="flex items-center mb-2">
+                                    <div class="bg-indigo-100 text-indigo-600 rounded-full p-2 mr-4">
+                                        <i class="fas fa-file-alt text-sm"></i>
+                                    </div>
+                                    <h4 class="text-base md:text-lg font-semibold">1. Fill Application Form</h4>
+                                </div>
+                                <p class="text-gray-600 text-sm md:text-base">Complete our online application form with your personal and educational details.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline item 2 -->
+                        <div class="relative pl-12 timeline-item">
+                            <div class="absolute left-0 top-0 h-full w-0.5 bg-indigo-200 ml-2.5"></div>
+                            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md">
+                                <div class="flex items-center mb-2">
+                                    <div class="bg-indigo-100 text-indigo-600 rounded-full p-2 mr-4">
+                                        <i class="fas fa-comment-dollar text-sm"></i>
+                                    </div>
+                                    <h4 class="text-base md:text-lg font-semibold">2. Pay Application Fee</h4>
+                                </div>
+                                <p class="text-gray-600 text-sm md:text-base">Pay the non-refundable application fee of ৳500 through our secure payment gateway.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline item 3 -->
+                        <div class="relative pl-12 timeline-item">
+                            <div class="absolute left-0 top-0 h-full w-0.5 bg-indigo-200 ml-2.5"></div>
+                            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md">
+                                <div class="flex items-center mb-2">
+                                    <div class="bg-indigo-100 text-indigo-600 rounded-full p-2 mr-4">
+                                        <i class="fas fa-user-check text-sm"></i>
+                                    </div>
+                                    <h4 class="text-base md:text-lg font-semibold">3. Interview/Test</h4>
+                                </div>
+                                <p class="text-gray-600 text-sm md:text-base">Attend an interview or take an entrance test (depending on course requirements).</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline item 4 -->
+                        <div class="relative pl-12 timeline-item">
+                            <div class="bg-white p-4 md:p-6 rounded-lg shadow-md">
+                                <div class="flex items-center mb-2">
+                                    <div class="bg-indigo-100 text-indigo-600 rounded-full p-2 mr-4">
+                                        <i class="fas fa-check-circle text-sm"></i>
+                                    </div>
+                                    <h4 class="text-base md:text-lg font-semibold">4. Admission Confirmation</h4>
+                                </div>
+                                <p class="text-gray-600 text-sm md:text-base">Receive your admission letter and complete the enrollment process by paying course fees.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-gray-800 mb-6">Apply Online</h3>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="full-name" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Full Name</label>
+                                    <input type="text" id="full-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Email Address</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base">
+                            </div>
+                            <div class="mb-4">
+                                <label for="course" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Select Course</label>
+                                <select id="course" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base">
+                                    <option value="">-- Select a Course --</option>
+                                    <option value="cybersecurity">Cybersecurity Professional</option>
+                                    <option value="ai">AI & Machine Learning</option>
+                                    <option value="webdev">Full Stack Web Development</option>
+                                    <option value="data-science">Data Science</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Why do you want to join this course?</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300 text-sm md:text-base">Submit Application</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-12 md:py-16 bg-indigo-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold">What Our Students Say</h2>
+                <div class="w-20 h-1 bg-white mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 testimonial-grid">
+                <!-- Testimonial 1 -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/80?text=Student" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-sm md:text-base">Tahsin Ahmed</h4>
+                            <p class="text-indigo-200 text-xs md:text-sm">Cybersecurity Graduate</p>
+                        </div>
+                    </div>
+                    <p class="italic mb-4 text-sm md:text-base">"The cybersecurity course at Cyber Learns Academy transformed my career. The hands-on training and industry-relevant curriculum helped me land a job at a top tech firm right after completion."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/80?text=Student" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-sm md:text-base">Farhana Akter</h4>
+                            <p class="text-indigo-200 text-xs md:text-sm">AI & ML Student</p>
+                        </div>
+                    </div>
+                    <p class="italic mb-4 text-sm md:text-base">"The instructors are phenomenal! They break down complex AI concepts into digestible lessons. The projects we worked on were challenging but extremely rewarding."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/80?text=Student" alt="Student" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-sm md:text-base">Rakib Hasan</h4>
+                            <p class="text-indigo-200 text-xs md:text-sm">Web Development Graduate</p>
+                        </div>
+                    </div>
+                    <p class="italic mb-4 text-sm md:text-base">"I went from knowing nothing about coding to becoming a full-stack developer in just 5 months. The curriculum is perfectly structured with the right balance of theory and practice."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star text-sm"></i>
+                        <i class="fas fa-star-half-alt text-sm"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 md:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Contact Us</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mt-4"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto text-sm md:text-base">Have questions? Get in touch with our team for more information about our courses and admission process.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 contact-grid">
+                <div>
+                    <div class="bg-gray-50 p-6 md:p-8 rounded-lg shadow-md">
+                        <h3 class="text-lg md:text-xl font-semibold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-4 md:space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 rounded-md p-2 md:p-3">
+                                    <i class="fas fa-map-marker-alt text-indigo-600 text-sm"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-base md:text-lg font-medium text-gray-900">Address</h4>
+                                    <p class="text-gray-600 mt-1 text-sm md:text-base">Dakshin Dinajpur ,Gangrampur,westbangla ,india<br>Dakshin Dinajpur ,733124</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 rounded-md p-2 md:p-3">
+                                    <i class="fas fa-phone-alt text-indigo-600 text-sm"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-base md:text-lg font-medium text-gray-900">Phone</h4>
+                                    <p class="text-gray-600 mt-1 text-sm md:text-base">+91 894204558<br>+91 894204558</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 rounded-md p-2 md:p-3">
+                                    <i class="fas fa-envelope text-indigo-600 text-sm"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-base md:text-lg font-medium text-gray-900">Email</h4>
+                                    <p class="text-gray-600 mt-1 text-sm md:text-base">info@cyberlearnsacademy.com<br>admissions@cyberlearnsacademy.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-indigo-100 rounded-md p-2 md:p-3">
+                                    <i class="fas fa-clock text-indigo-600 text-sm"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-base md:text-lg font-medium text-gray-900">Opening Hours</h4>
+                                    <p class="text-gray-600 mt-1 text-sm md:text-base">Saturday - Thursday: 9:00 AM - 6:00 PM<br>Friday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-base md:text-lg font-medium mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-indigo-100 text-indigo-600 hover:bg-indigo-200 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-indigo-100 text-indigo-600 hover:bg-indigo-200 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-indigo-100 text-indigo-600 hover:bg-indigo-200 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-indigo-100 text-indigo-600 hover:bg-indigo-200 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white p-6 md:p-8 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-lg md:text-xl font-semibold mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="contact-name" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Your Name</label>
+                                    <input type="text" id="contact-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base">
+                                </div>
+                                <div>
+                                    <label for="contact-email" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Your Email</label>
+                                    <input type="email" id="contact-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="contact-subject" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Subject</label>
+                                <input type="text" id="contact-subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base">
+                            </div>
+                            <div class="mb-6">
+                                <label for="contact-message" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Message</label>
+                                <textarea id="contact-message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm md:text-base"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300 text-sm md:text-base">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map Section -->
+            <div class="mt-12 md:mt-16 bg-gray-100 rounded-lg overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.7512498272985!2d88.57006767579314!3d25.36493014414759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fb43b9e5c5817d%3A0x26e7c6ed4c105663!2sCyber%20Learns%20Academy!5e0!3m2!1sen!2sbd!4v1716899900000!5m2!1sen!2sbd" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 footer-grid">
+                <div>
+                    <h3 class="text-lg md:text-xl font-bold mb-6">Cyber Learns Academy</h3>
+                    <p class="text-gray-400 mb-4 text-sm md:text-base">Empowering the next generation of tech professionals and academic achievers through quality education.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-base md:text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300 text-sm md:text-base">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300 text-sm md:text-base">About Us</a></li>
+                        <li><a href="#courses" class="text-gray-400 hover:text-white transition duration-300 text-sm md:text-base">Courses</a></li>
+                        <li><a href="https://wa.me/918942045558?text=হ্যালো%2C%20আমি%20আপনার%20সার্ভিস%20নিয়ে%20আগ্রহী।%20Hi%20sir%2C%20I%20need%20admission.
+" class="text-gray-400 hover:text-white transition duration-300 text-sm md:text-base">Admissions</a></li>
+                        <li><a href="https://wa.me/918942045558?text=Hi%2C%20I%20am%20interested%20in%20your%20service.
+" class="text-gray-400 hover:text-white transition duration-300 text-sm md:text-base">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-base md:text-lg font-semibold mb-6">Courses</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm md:text-base">Cybersecurity</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm md:text-base">AI & Machine Learning</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm md:text-base">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm md:text-base">Data Science</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm md:text-base">Cloud Computing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-base md:text-lg font-semibold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4 text-sm md:text-base">Subscribe to our newsletter for the latest updates on courses and events.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-900 text-sm md:text-base">
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="mt-6">
+                        <h4 class="text-base md:text-lg font-semibold mb-4">Download App</h4>
+                        <div class="flex space-x-3">
+                            <a href="#" class="bg-black bg-opacity-30 hover:bg-opacity-50 rounded-lg p-2 flex items-center">
+                                <i class="fab fa-google-play text-xl md:text-2xl mr-2"></i>
+                                <div>
+                                    <div class="text-xs">Get it on</div>
+                                    <div class="font-medium text-sm md:text-base">Google Play</div>
+                                </div>
+                            </a>
+                            <a href="#" class="bg-black bg-opacity-30 hover:bg-opacity-50 rounded-lg p-2 flex items-center">
+                                <i class="fab fa-apple text-xl md:text-2xl mr-2"></i>
+                                <div>
+                                    <div class="text-xs">Download on the</div>
+                                    <div class="font-medium text-sm md:text-base">App Store</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 md:mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0 text-sm md:text-base">© 2025 Cyber Learns Academy. All rights reserved.</p>
+                <div class="flex space-x-4 md:space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm md:text-base">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm md:text-base">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm md:text-base">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918942045558?text=হ্যালো%2C%20আমি%20আপনার%20সার্ভিস%20নিয়ে%20আগ্রহী।%20Hi%20sir%2C%20I%20need%20admission.
+" class="fixed bottom-6 right-6 bg-green-500 text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition duration-300 z-50">
+        <i class="fab fa-whatsapp text-xl md:text-2xl"></i>
+    </a>
+    
+    <script>
+
+        
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburger = document.getElementById('hamburger');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            hamburger.classList.toggle('open');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                hamburger.classList.remove('open');
+            });
+        });
+        
+        // Dark mode toggle for desktop
+        const themeToggle = document.getElementById('theme-toggle');
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            toggleDarkModeIcon(icon);
+        });
+        
+        // Dark mode toggle for mobile
+        mobileThemeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark-mode');
+            const icon = mobileThemeToggle.querySelector('i');
+            toggleDarkModeIcon(icon);
+        });
+        
+        function toggleDarkModeIcon(icon) {
+            if (html.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                icon.classList.remove('text-gray-600');
+                icon.classList.add('text-yellow-400');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                icon.classList.remove('text-yellow-400');
+                icon.classList.add('text-gray-600');
+            }
+        }
+        
+        // Typing effect
+        class TypeWriter {
+            constructor(txtElement, words, wait = 3000) {
+                this.txtElement = txtElement;
+                this.words = words;
+                this.txt = '';
+                this.wordIndex = 0;
+                this.wait = parseInt(wait, 10);
+                this.type();
+                this.isDeleting = false;
+            }
+            
+            type() {
+                const current = this.wordIndex % this.words.length;
+                const fullTxt = this.words[current];
+                
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+                
+                this.txtElement.textContent = this.txt;
+                
+                let typeSpeed = 200;
+                
+                if (this.isDeleting) {
+                    typeSpeed /= 2;
+                }
+                
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    typeSpeed = this.wait;
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.wordIndex++;
+                    typeSpeed = 500;
+                }
+                
+                setTimeout(() => this.type(), typeSpeed);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', init);
+        
+        function init() {
+            const txtElement = document.querySelector('.typing-text');
+            const words = JSON.parse(txtElement.getAttribute('data-words'));
+            const wait = txtElement.getAttribute('data-wait') || 3000;
+            
+            new TypeWriter(txtElement, words, wait);
+        }
+        
+        // Counter animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+        
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+        
+        // Start counter animation when scrolled to stats section
+        window.addEventListener('scroll', () => {
+            const statsSection = document.querySelector('.bg-white.py-12');
+            if (!statsSection) return;
+            
+            const sectionPosition = statsSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (sectionPosition < screenPosition) {
+                animateCounters();
+                // Remove the event listener after animation starts
+                window.removeEventListener('scroll', arguments.callee);
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (!targetId || targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (!targetElement) return;
+                
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
